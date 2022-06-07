@@ -5,16 +5,17 @@
     <title>Amayieh.com</title>
     <style type="text/css">
         body {
-            background: rgb(125, 198, 205);
+            background: rgb(125, 177, 221);
             color: rgb(45, 45, 45);
             padding: 10px;
             font-family: opera;
         }
+
         header {
             font-size: 1.5em;
             font-weight: bold;
         }
-        
+
         #all-contents {
             max-width: 800px;
             margin: auto;
@@ -24,22 +25,28 @@
         nav {
             background: rgb(41, 170, 190);
             margin: 0 auto;
+            margin-bottom: 20px;
+            border-radius: 15px;
             display: flex;
             padding: 10px;
         }
+
         h1 {
             display: flex;
             align-items: center;
             color: rgb(255, 255, 255);
             flex: 1;
         }
+
         #nav-ul {
             list-style-image: none;
         }
+
         .nav-li {
             display: inline-block;
             padding: 0 10px;
         }
+
         .nav-a {
             text-decoration: none;
             color: #fff;
@@ -50,38 +57,38 @@
             background: rgb(255, 255, 255);
             display: flex;
         }
+
         .content {
             flex: 1;
             padding: 15px;
         }
-                 /* portfolio styles */
-                 .content h1 {
-             color: black;
-         }
-         
-         #portfolio {
-             list-style-type: none;
-             padding-left: 0;
-         }
-         
-         #portfolio li {
-             background: #fff;
-             padding: 10px;
-             border-radius: 10px;
-             margin-bottom: 10px;
-         }
-         
-         #portfolio li:hover {
-             background: #eee;
-         } 
-         
-         #portfolio a {
-             text-decoration: bold;
-             color: #454545;
-         }
-         #portfolio {
-            border: 4px rgb(120, 118, 118) ridge;
-         }
+
+        /* portfolio styles */
+        .content h1 {
+            color: black;
+        }
+
+        #portfolio {
+            list-style-type: none;
+            padding-left: 0;
+            /* border: 4px rgb(120, 118, 118) ridge; */
+        }
+
+        #portfolio li {
+            background: rgb(161, 205, 216, 0.5);
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        #portfolio li:hover {
+            background: rgb(41, 170, 190, 0.5);
+        }
+
+        #portfolio a {
+            text-decoration: bold;
+            color: #454545;
+        }
     </style>
 </head>
 
@@ -102,9 +109,12 @@
             <div class="content">
                 <h1>Portfolio</h1>
                 <ul id="portfolio">
-                    <li><a href="projects/platformer/">Platformer : A cannon - dodging, collectible - grabbing adventure game for Halleb0t</a></li>
-                    <li><a href="projects/bouncing-box/">Bouncing Box : A project that gives you a taste of game development on the web </a></li>
-                    <li><a href="projects/circularity/">Circularity : A motion poem using random number generation and velocity applied to circle shapes...</a></li>
+                    <li><a href="projects/platformer/">Platformer : A cannon - dodging, collectible - grabbing adventure
+                            game for Halleb0t</a></li>
+                    <li><a href="projects/bouncing-box/">Bouncing Box : A project that gives you a taste of game
+                            development on the web </a></li>
+                    <li><a href="projects/circularity/">Circularity : A motion poem using random number generation and
+                            velocity applied to circle shapes...</a></li>
                 </ul>
             </div>
         </main>
