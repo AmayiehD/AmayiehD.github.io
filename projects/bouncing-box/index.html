@@ -44,7 +44,7 @@
 			var box = jQuery('.box');	// reference to the HTML .box element
 			var board = jQuery('.board');	// reference to the HTML .board element
 			var boardWidth = board.width();	// the maximum X-Coordinate of the screen
-
+			var boardHeight = board.height();
 			// Every 50 milliseconds, call the update Function (see below)
 			setInterval(update, 50);
 
@@ -54,7 +54,7 @@
 			// moves the Box to a new position on the screen along the X-Axis
 			function moveBoxTo(newPositionX, newPositionY) {
 				box.css("left", newPositionX);
-				box.css("top" , newPositionY);
+				box.css("top", newPositionY);
 			}
 
 			// changes the text displayed on the Box
@@ -71,9 +71,9 @@
 			var positionX = 0;
 			var points = 1;
 			var speed = 10;
-			var positionY;
-			var speedY;
-			var boardHeight = jQuery(window).height();
+			var positionY = 0;
+			var speedY = speed * -1 ;
+		
 
 			/* 
 			This Function will be called 20 times/second. Each time it is called,
@@ -84,13 +84,21 @@
 				//Increase positionX by 10
 				moveBoxTo(positionX, positionY);
 				positionX = positionX + speed;
+				positionY = positionY +speedY;
 				if (positionX > boardWidth) {
 					speed = speed * -1;
 				}
 
 				if (positionX < 0) {
 					speed = speed * -1;
-				}	
+				}
+				if (positionY > boardHeight) {
+					speedY = speed * 1;
+				}
+
+				if (positionY < 0) {
+					speedY = speed * 1;
+				}
 			};
 
 			/* 
@@ -99,16 +107,17 @@
 			the left side of the screen.
 			*/
 			function handleBoxClick() {
-				positionX = 0;
+
 				changeBoxText(points);
 				points = points + 1;
-				if (speed === positiveNumber) {
+				speed = speed + 3;
+				if (speed > 0) {
 					speed = speed + 3;
 				}
-				else if (speed === negativeNumber) {
+				else if (speed < 0) {
 					speed = speed - 3;
 				}
-
+				
 
 			};
 		})();
