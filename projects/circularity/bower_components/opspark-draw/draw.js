@@ -38,6 +38,9 @@
         if (a) { return 'rgba(' + randomRGBRange(r) + ','  + randomRGBRange(g) + ',' + randomRGBRange(b) + ',' + a + ')'; }
         return '#' + randomRGBRange(r) + randomRGBRange(g) + randomRGBRange(b);
     }
+    function blue(){
+        return 'rgb(0, 0, 128)';
+    }
 
     function randomRGBRange(maxRange) {
         return Math.floor(Math.random() * (maxRange + 1)).toString(16); 
@@ -277,12 +280,12 @@
 			
 			if (addCross) {
 			    // always make sure the cross is visible - it won't be if randomizeAlpha is false //
-			    randomizeAlpha = true;
+			    randomizeAlpha = false;
     			circle = draw.line(-(props.radius), 0, props.radius, 0, borderColor  || '#000', 2);
     		    draw.line(0, -(props.radius), 0, props.radius, borderColor || '#000', 2, circle);
 			}
 			
-			if (borderColor && !borderThickness) { borderThickness = 1; }
+			if (borderColor && !borderThickness) { borderThickness = 1 }
 			
 			// first draw the circle's border - don't use stroke //
 			circle = draw.circle(props.radius+borderThickness, borderColor, null, null, null, null, circle);
@@ -300,7 +303,8 @@
     	randomRadialProps: function (area, radiusMin, radiusMax, redMax, greenMax, blueMax) {
     	    return {
     	        radius: randomIntBetween(radiusMin || 5, radiusMax || 20),
-    	        color: randomColor(redMax || 255, greenMax || 255, blueMax || 255),
+                color: blue(),
+    	        // color: randomColor(redMax||255, greenMax || 255, blueMax || 255),
     	        x: randomIntBetween(0, area.width),
     	        y: randomIntBetween(0, area.height)
     	    };
